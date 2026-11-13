@@ -1,0 +1,35 @@
+[project]
+name = "sba-927-text-analytics"
+version = "0.1.0"
+description= "Business text analytics with NLTK, spaCy, Hugging Face and LLM prompts (SBA 927)"
+readme = "README.md"
+authors = [
+    { name = "Anthony Emmanuel", email = "aeemmanuel500@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "en-core-web-sm",
+    "langchain>=1.5.0",
+    "langchain-groq>=1.1.3",
+    "nltk>=3.10.4",
+    "numpy>=2.5.4",
+    "python-dotenv>=1.2.4",
+    "spacy>=3.8.18",
+    "torch>=2.15.0",
+    "transformers>=5.22.2",
+]
+
+[project.scripts]
+sba-927-text-analytics = "sba_927_text_analytics:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
